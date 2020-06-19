@@ -1,0 +1,58 @@
+# do TIMER.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TIMER
+# 
+# Top level modules:
+# 	TIMER
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TIMER_vlg_sample_tst
+# -- Compiling module TIMER_vlg_check_tst
+# -- Compiling module TIMER_vlg_vec_tst
+# 
+# Top level modules:
+# 	TIMER_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.TIMER_vlg_vec_tst 
+# Loading work.TIMER_vlg_vec_tst
+# Loading work.TIMER
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.TIMER_vlg_sample_tst
+# Loading work.TIMER_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port MINUTE[0] :: @time = 1000000.000 ps
+#      Expected value = 000
+#      Real value = 001
+# ERROR! Vector Mismatch for output port SECOND[0] :: @time = 1000000.000 ps
+#      Expected value = 000000
+#      Real value = 100101
+# ERROR! Vector Mismatch for output port SECOND[2] :: @time = 1000000.000 ps
+#      Expected value = 000000
+#      Real value = 100101
+# ERROR! Vector Mismatch for output port SECOND[5] :: @time = 1000000.000 ps
+#      Expected value = 000000
+#      Real value = 100101
+# ERROR! Vector Mismatch for output port SECOND[1] :: @time = 1005000.000 ps
+#      Expected value = 000000
+#      Real value = 100110
+# ERROR! Vector Mismatch for output port SECOND[3] :: @time = 1025000.000 ps
+#      Expected value = 000000
+#      Real value = 101000
+# ERROR! Vector Mismatch for output port SECOND[4] :: @time = 1105000.000 ps
+#      Expected value = 000000
+#      Real value = 110000
+# ERROR! Vector Mismatch for output port MINUTE[1] :: @time = 1225000.000 ps
+#      Expected value = 000
+#      Real value = 010
+# ERROR! Vector Mismatch for output port TIME_UP :: @time = 2305000.000 ps
+#      Expected value = 0
+#      Real value = 1
+#           9 mismatched vectors : Simulation failed !
+# ** Note: $finish    : Waveform.vwf.vt(344)
+#    Time: 3 us  Iteration: 0  Instance: /TIMER_vlg_vec_tst/tb_out

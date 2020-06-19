@@ -1,0 +1,7 @@
+
+State Machine - |APB_Slave|fsm_cs
+Name fsm_cs.done fsm_cs.enable fsm_cs.set fsm_cs.idle 
+fsm_cs.idle 0 0 0 0 
+fsm_cs.set 0 0 1 1 
+fsm_cs.enable 0 1 0 1 
+fsm_cs.done 1 0 0 1 

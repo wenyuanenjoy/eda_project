@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Zircon_Verilog\APB_Slave\simulation\qsim
+vAPB_Slave
+Z1 !s100 3INWT=5o<fZWSIS8^zZdV2
+Z2 I=WN4k0n;mCHDDJgfPJbEN1
+Z3 VW@eg[oX;8k1870jnmCe<T3
+Z4 dD:\Zircon_Verilog\APB_Slave\simulation\qsim
+Z5 w1592559686
+Z6 8APB_Slave.vo
+Z7 FAPB_Slave.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|APB_Slave.vo|
+Z10 o-work work -O0
+Z11 n@a@p@b_@slave
+!i10b 1
+!s85 0
+Z12 !s108 1592559687.735000
+Z13 !s107 APB_Slave.vo|
+!s101 -O0
+vAPB_Slave_vlg_check_tst
+!i10b 1
+Z14 !s100 MhY[b?LC]YCUFTO^9Po@a3
+Z15 I5N`E``JWi=WVFPOBF:OD42
+Z16 V0m?O?_<NBEHc7m3RnMc5m3
+R4
+Z17 w1592559685
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 69
+R8
+r1
+!s85 0
+31
+Z20 !s108 1592559687.992000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@a@p@b_@slave_vlg_check_tst
+vAPB_Slave_vlg_sample_tst
+!i10b 1
+Z24 !s100 Q>4g6VNk0Sd07F8CGeD_;1
+Z25 IKjalDNXdQFWMZ]2SQCcF^1
+Z26 V?Eh2Ba:MCmezhQEm6G87^3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@a@p@b_@slave_vlg_sample_tst
+vAPB_Slave_vlg_vec_tst
+!i10b 1
+!s100 38Wi;4lOLLdK;;z;DE0K^3
+I3zN@FBE;YQR]i9laWTI0E0
+Z28 V9g=NAHEHE22DmGgOP@ZlL0
+R4
+R17
+R18
+R19
+Z29 L0 4403
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@a@p@b_@slave_vlg_vec_tst

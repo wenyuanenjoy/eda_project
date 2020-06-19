@@ -1,0 +1,554 @@
+ -- Copyright (C) 1991-2013 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		2.5V
+ --					Bank 2:		2.5V
+ --					Bank 3:		2.5V
+ --					Bank 4:		2.5V
+ --					Bank 5:		2.5V
+ --					Bank 6:		2.5V
+ --					Bank 7:		2.5V
+ --					Bank 8:		2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+CHIP  "APB_Slave"  ASSIGNED TO AN: EP4CE15F23A7
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND                          : A1        : gnd    :                   :         :           :                
+VCCIO8                       : A2        : power  :                   : 2.5V    : 8         :                
+EX_TO_NS[23]                 : A3        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[31]                 : A4        : output : 2.5 V             :         : 8         : N              
+COUNT[27]                    : A5        : output : 2.5 V             :         : 8         : N              
+PWDATA[30]                   : A6        : input  : 2.5 V             :         : 8         : N              
+PWRITE                       : A7        : input  : 2.5 V             :         : 8         : N              
+EX_TO[9]                     : A8        : output : 2.5 V             :         : 8         : N              
+PRDATA[19]                   : A9        : output : 2.5 V             :         : 8         : N              
+PWDATA[19]                   : A10       : input  : 2.5 V             :         : 8         : N              
+PADDR[1]                     : A11       : input  : 2.5 V             :         : 8         : N              
+GND+                         : A12       :        :                   :         : 7         :                
+EX_CON[23]                   : A13       : output : 2.5 V             :         : 7         : N              
+EX_TO[15]                    : A14       : output : 2.5 V             :         : 7         : N              
+EX_CON_NS[24]                : A15       : output : 2.5 V             :         : 7         : N              
+EX_TO[21]                    : A16       : output : 2.5 V             :         : 7         : N              
+PADDR[3]                     : A17       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 7         :                
+fsm_cs[2]                    : A19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7         :                
+VCCIO7                       : A21       : power  :                   : 2.5V    : 7         :                
+GND                          : A22       : gnd    :                   :         :           :                
+EX_TO[0]                     : AA1       : output : 2.5 V             :         : 2         : N              
+GND                          : AA2       : gnd    :                   :         :           :                
+COUNT_NS[20]                 : AA3       : output : 2.5 V             :         : 3         : N              
+PRDATA[22]                   : AA4       : output : 2.5 V             :         : 3         : N              
+COUNT[31]                    : AA5       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AA6       : power  :                   : 2.5V    : 3         :                
+EX_CON[9]                    : AA7       : output : 2.5 V             :         : 3         : N              
+EX_TO_NS[31]                 : AA8       : output : 2.5 V             :         : 3         : N              
+EX_TO_NS[29]                 : AA9       : output : 2.5 V             :         : 3         : N              
+EX_CON_NS[2]                 : AA10      : output : 2.5 V             :         : 3         : N              
+GND+                         : AA11      :        :                   :         : 3         :                
+GND+                         : AA12      :        :                   :         : 4         :                
+PWDATA[28]                   : AA13      : input  : 2.5 V             :         : 4         : N              
+PWDATA[15]                   : AA14      : input  : 2.5 V             :         : 4         : N              
+PWDATA[5]                    : AA15      : input  : 2.5 V             :         : 4         : N              
+EX_CON[28]                   : AA16      : output : 2.5 V             :         : 4         : N              
+EX_CON_NS[25]                : AA17      : output : 2.5 V             :         : 4         : N              
+EX_CON[19]                   : AA18      : output : 2.5 V             :         : 4         : N              
+EX_CON[1]                    : AA19      : output : 2.5 V             :         : 4         : N              
+EX_CON_NS[8]                 : AA20      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 5         :                
+GND                          : AA22      : gnd    :                   :         :           :                
+GND                          : AB1       : gnd    :                   :         :           :                
+VCCIO3                       : AB2       : power  :                   : 2.5V    : 3         :                
+COUNT[15]                    : AB3       : output : 2.5 V             :         : 3         : N              
+EX_TO[26]                    : AB4       : output : 2.5 V             :         : 3         : N              
+COUNT_NS[16]                 : AB5       : output : 2.5 V             :         : 3         : N              
+GND                          : AB6       : gnd    :                   :         :           :                
+EX_CON_NS[30]                : AB7       : output : 2.5 V             :         : 3         : N              
+COUNT[26]                    : AB8       : output : 2.5 V             :         : 3         : N              
+COUNT[25]                    : AB9       : output : 2.5 V             :         : 3         : N              
+PWDATA[29]                   : AB10      : input  : 2.5 V             :         : 3         : N              
+GND+                         : AB11      :        :                   :         : 3         :                
+GND+                         : AB12      :        :                   :         : 4         :                
+PRDATA[15]                   : AB13      : output : 2.5 V             :         : 4         : N              
+EX_TO_NS[17]                 : AB14      : output : 2.5 V             :         : 4         : N              
+PWDATA[23]                   : AB15      : input  : 2.5 V             :         : 4         : N              
+PRDATA[3]                    : AB16      : output : 2.5 V             :         : 4         : N              
+PWDATA[25]                   : AB17      : input  : 2.5 V             :         : 4         : N              
+PRDATA[5]                    : AB18      : output : 2.5 V             :         : 4         : N              
+EX_CON_NS[20]                : AB19      : output : 2.5 V             :         : 4         : N              
+COUNT_NS[28]                 : AB20      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AB21      : power  :                   : 2.5V    : 4         :                
+GND                          : AB22      : gnd    :                   :         :           :                
+PWDATA[11]                   : B1        : input  : 2.5 V             :         : 1         : N              
+EX_TO_NS[12]                 : B2        : output : 2.5 V             :         : 1         : N              
+EX_CON_NS[12]                : B3        : output : 2.5 V             :         : 8         : N              
+EX_TO_NS[14]                 : B4        : output : 2.5 V             :         : 8         : N              
+PRDATA[9]                    : B5        : output : 2.5 V             :         : 8         : N              
+PSEL                         : B6        : input  : 2.5 V             :         : 8         : N              
+EX_CON_NS[31]                : B7        : output : 2.5 V             :         : 8         : N              
+EX_TO_NS[3]                  : B8        : output : 2.5 V             :         : 8         : N              
+EX_CON_NS[3]                 : B9        : output : 2.5 V             :         : 8         : N              
+EX_CON[21]                   : B10       : output : 2.5 V             :         : 8         : N              
+PADDR[2]                     : B11       : input  : 2.5 V             :         : 8         : N              
+GND+                         : B12       :        :                   :         : 7         :                
+EX_CON[5]                    : B13       : output : 2.5 V             :         : 7         : N              
+EX_TO[31]                    : B14       : output : 2.5 V             :         : 7         : N              
+EX_TO[17]                    : B15       : output : 2.5 V             :         : 7         : N              
+PRDATA[25]                   : B16       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B17       :        :                   :         : 7         :                
+PADDR[4]                     : B18       : input  : 2.5 V             :         : 7         : N              
+COUNT_NS[4]                  : B19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 6         :                
+PWDATA[7]                    : C1        : input  : 2.5 V             :         : 1         : N              
+COUNT_NS[8]                  : C2        : output : 2.5 V             :         : 1         : N              
+PRDATA[11]                   : C3        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[6]                  : C4        : output : 2.5 V             :         : 8         : N              
+GND                          : C5        : gnd    :                   :         :           :                
+COUNT[3]                     : C6        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[2]                  : C7        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[17]                 : C8        : output : 2.5 V             :         : 8         : N              
+GND                          : C9        : gnd    :                   :         :           :                
+PWDATA[24]                   : C10       : input  : 2.5 V             :         : 8         : N              
+GND                          : C11       : gnd    :                   :         :           :                
+GND                          : C12       : gnd    :                   :         :           :                
+EX_CON_NS[19]                : C13       : output : 2.5 V             :         : 7         : N              
+GND                          : C14       : gnd    :                   :         :           :                
+EX_CON_NS[17]                : C15       : output : 2.5 V             :         : 7         : N              
+GND                          : C16       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
+GND                          : C18       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C22       :        :                   :         : 6         :                
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D1        : input  : 2.5 V             :         : 1         : N              
+EX_CON_NS[6]                 : D2        : output : 2.5 V             :         : 1         : N              
+GND                          : D3        : gnd    :                   :         :           :                
+VCCIO1                       : D4        : power  :                   : 2.5V    : 1         :                
+VCCIO8                       : D5        : power  :                   : 2.5V    : 8         :                
+EX_TO[7]                     : D6        : output : 2.5 V             :         : 8         : N              
+GND                          : D7        : gnd    :                   :         :           :                
+GND                          : D8        : gnd    :                   :         :           :                
+VCCIO8                       : D9        : power  :                   : 2.5V    : 8         :                
+INT_B                        : D10       : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : D11       : power  :                   : 2.5V    : 8         :                
+VCCIO7                       : D12       : power  :                   : 2.5V    : 7         :                
+PWDATA[18]                   : D13       : input  : 2.5 V             :         : 7         : N              
+VCCIO7                       : D14       : power  :                   : 2.5V    : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7         :                
+VCCIO7                       : D16       : power  :                   : 2.5V    : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
+VCCIO7                       : D18       : power  :                   : 2.5V    : 7         :                
+fsm_ns[2]                    : D19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 6         :                
+EX_CON_NS[14]                : E1        : output : 2.5 V             :         : 1         : N              
+~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 2.5 V             :         : 1         : N              
+COUNT[13]                    : E3        : output : 2.5 V             :         : 1         : N              
+PRDATA[12]                   : E4        : output : 2.5 V             :         : 1         : N              
+EX_TO[12]                    : E5        : output : 2.5 V             :         : 8         : N              
+PWDATA[0]                    : E6        : input  : 2.5 V             :         : 8         : N              
+PWDATA[10]                   : E7        : input  : 2.5 V             :         : 8         : N              
+VCCIO8                       : E8        : power  :                   : 2.5V    : 8         :                
+EX_CON[31]                   : E9        : output : 2.5 V             :         : 8         : N              
+PWDATA[20]                   : E10       : input  : 2.5 V             :         : 8         : N              
+COUNT[5]                     : E11       : output : 2.5 V             :         : 7         : N              
+EX_TO_NS[4]                  : E12       : output : 2.5 V             :         : 7         : N              
+EX_TO_NS[18]                 : E13       : output : 2.5 V             :         : 7         : N              
+PWDATA[21]                   : E14       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 7         :                
+VCCD_PLL2                    : E17       : power  :                   : 1.2V    :           :                
+GNDA2                        : E18       : gnd    :                   :         :           :                
+VCCIO6                       : E19       : power  :                   : 2.5V    : 6         :                
+GND                          : E20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 6         :                
+PRDATA[10]                   : F1        : output : 2.5 V             :         : 1         : N              
+EX_TO_NS[9]                  : F2        : output : 2.5 V             :         : 1         : N              
+GND                          : F3        : gnd    :                   :         :           :                
+VCCIO1                       : F4        : power  :                   : 2.5V    : 1         :                
+GNDA3                        : F5        : gnd    :                   :         :           :                
+VCCD_PLL3                    : F6        : power  :                   : 1.2V    :           :                
+PRDATA[0]                    : F7        : output : 2.5 V             :         : 8         : N              
+EX_CON[6]                    : F8        : output : 2.5 V             :         : 8         : N              
+PWDATA[14]                   : F9        : input  : 2.5 V             :         : 8         : N              
+EX_CON[12]                   : F10       : output : 2.5 V             :         : 8         : N              
+PRDATA[24]                   : F11       : output : 2.5 V             :         : 7         : N              
+PRDATA[28]                   : F12       : output : 2.5 V             :         : 7         : N              
+EX_TO_NS[20]                 : F13       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 6         :                
+VCCA2                        : F18       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 6         :                
+SYSCLK                       : G1        : input  : 2.5 V             :         : 1         : N              
+GND                          : G2        : gnd    :                   :         :           :                
+COUNT_NS[12]                 : G3        : output : 2.5 V             :         : 1         : N              
+EX_CON_NS[7]                 : G4        : output : 2.5 V             :         : 1         : N              
+EX_TO_NS[10]                 : G5        : output : 2.5 V             :         : 1         : N              
+VCCA3                        : G6        : power  :                   : 2.5V    :           :                
+COUNT_NS[15]                 : G7        : output : 2.5 V             :         : 8         : N              
+EX_CON[3]                    : G8        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[14]                 : G9        : output : 2.5 V             :         : 8         : N              
+COUNT_NS[9]                  : G10       : output : 2.5 V             :         : 8         : N              
+EX_CON[29]                   : G11       : output : 2.5 V             :         : 8         : N              
+EX_TO_NS[16]                 : G12       : output : 2.5 V             :         : 7         : N              
+EX_CON_NS[21]                : G13       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G18       :        :                   :         : 6         :                
+VCCIO6                       : G19       : power  :                   : 2.5V    : 6         :                
+GND                          : G20       : gnd    :                   :         :           :                
+GND+                         : G21       :        :                   :         : 6         :                
+GND+                         : G22       :        :                   :         : 6         :                
+PRDATA[13]                   : H1        : output : 2.5 V             :         : 1         : N              
+EX_CON[13]                   : H2        : output : 2.5 V             :         : 1         : N              
+GND                          : H3        : gnd    :                   :         :           :                
+VCCIO1                       : H4        : power  :                   : 2.5V    : 1         :                
+EX_TO[22]                    : H5        : output : 2.5 V             :         : 1         : N              
+EX_CON_NS[26]                : H6        : output : 2.5 V             :         : 1         : N              
+EX_CON_NS[0]                 : H7        : output : 2.5 V             :         : 1         : N              
+GND                          : H8        : gnd    :                   :         :           :                
+COUNT[12]                    : H9        : output : 2.5 V             :         : 8         : N              
+PRDATA[2]                    : H10       : output : 2.5 V             :         : 8         : N              
+COUNT_NS[30]                 : H11       : output : 2.5 V             :         : 8         : N              
+EX_CON_NS[16]                : H12       : output : 2.5 V             :         : 7         : N              
+EX_TO_NS[28]                 : H13       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
+EX_TO[3]                     : H18       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
+COUNT_NS[19]                 : J1        : output : 2.5 V             :         : 1         : N              
+EX_TO_NS[26]                 : J2        : output : 2.5 V             :         : 1         : N              
+EX_CON[22]                   : J3        : output : 2.5 V             :         : 1         : N              
+PWDATA[12]                   : J4        : input  : 2.5 V             :         : 1         : N              
+GND                          : J5        : gnd    :                   :         :           :                
+EX_CON_NS[13]                : J6        : output : 2.5 V             :         : 1         : N              
+EX_TO[13]                    : J7        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : J8        : power  :                   : 1.2V    :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+VCCINT                       : J10       : power  :                   : 1.2V    :           :                
+VCCINT                       : J11       : power  :                   : 1.2V    :           :                
+VCCINT                       : J12       : power  :                   : 1.2V    :           :                
+VCCINT                       : J13       : power  :                   : 1.2V    :           :                
+VCCINT                       : J14       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J18       :        :                   :         : 6         :                
+GND                          : J19       : gnd    :                   :         :           :                
+VCCIO6                       : J20       : power  :                   : 2.5V    : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J21       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 6         :                
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : K1        : input  : 2.5 V             :         : 1         : N              
+~ALTERA_DCLK~                : K2        : output : 2.5 V             :         : 1         : N              
+GND                          : K3        : gnd    :                   :         :           :                
+VCCIO1                       : K4        : power  :                   : 2.5V    : 1         :                
+nCONFIG                      : K5        :        :                   :         : 1         :                
+nSTATUS                      : K6        :        :                   :         : 1         :                
+PRDATA[7]                    : K7        : output : 2.5 V             :         : 1         : N              
+PRDATA[6]                    : K8        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : K9        : power  :                   : 1.2V    :           :                
+GND                          : K10       : gnd    :                   :         :           :                
+GND                          : K11       : gnd    :                   :         :           :                
+GND                          : K12       : gnd    :                   :         :           :                
+GND                          : K13       : gnd    :                   :         :           :                
+VCCINT                       : K14       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K18       :        :                   :         : 6         :                
+PWDATA[17]                   : K19       : input  : 2.5 V             :         : 6         : N              
+MSEL3                        : K20       :        :                   :         : 6         :                
+EX_CON[2]                    : K21       : output : 2.5 V             :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : K22       : output : 2.5 V             :         : 6         : N              
+TMS                          : L1        : input  :                   :         : 1         :                
+TCK                          : L2        : input  :                   :         : 1         :                
+nCE                          : L3        :        :                   :         : 1         :                
+TDO                          : L4        : output :                   :         : 1         :                
+TDI                          : L5        : input  :                   :         : 1         :                
+PRDATA[1]                    : L6        : output : 2.5 V             :         : 2         : N              
+PADDR[0]                     : L7        : input  : 2.5 V             :         : 2         : N              
+EX_TO[14]                    : L8        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : L9        : power  :                   : 1.2V    :           :                
+GND                          : L10       : gnd    :                   :         :           :                
+GND                          : L11       : gnd    :                   :         :           :                
+GND                          : L12       : gnd    :                   :         :           :                
+GND                          : L13       : gnd    :                   :         :           :                
+VCCINT                       : L14       : power  :                   : 1.2V    :           :                
+EX_TO[30]                    : L15       : output : 2.5 V             :         : 6         : N              
+PWDATA[4]                    : L16       : input  : 2.5 V             :         : 6         : N              
+MSEL2                        : L17       :        :                   :         : 6         :                
+MSEL1                        : L18       :        :                   :         : 6         :                
+VCCIO6                       : L19       : power  :                   : 2.5V    : 6         :                
+GND                          : L20       : gnd    :                   :         :           :                
+EX_CON_NS[9]                 : L21       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L22       :        :                   :         : 6         :                
+COUNT[0]                     : M1        : output : 2.5 V             :         : 2         : N              
+PWDATA[1]                    : M2        : input  : 2.5 V             :         : 2         : N              
+EX_TO_NS[1]                  : M3        : output : 2.5 V             :         : 2         : N              
+EX_CON_NS[22]                : M4        : output : 2.5 V             :         : 2         : N              
+COUNT[11]                    : M5        : output : 2.5 V             :         : 2         : N              
+PRDATA[27]                   : M6        : output : 2.5 V             :         : 2         : N              
+EX_TO[1]                     : M7        : output : 2.5 V             :         : 2         : N              
+EX_CON[27]                   : M8        : output : 2.5 V             :         : 2         : N              
+VCCINT                       : M9        : power  :                   : 1.2V    :           :                
+GND                          : M10       : gnd    :                   :         :           :                
+GND                          : M11       : gnd    :                   :         :           :                
+GND                          : M12       : gnd    :                   :         :           :                
+GND                          : M13       : gnd    :                   :         :           :                
+VCCINT                       : M14       : power  :                   : 1.2V    :           :                
+EX_TO[16]                    : M15       : output : 2.5 V             :         : 5         : N              
+EX_TO_NS[8]                  : M16       : output : 2.5 V             :         : 5         : N              
+MSEL0                        : M17       :        :                   :         : 6         :                
+CONF_DONE                    : M18       :        :                   :         : 6         :                
+EX_TO_NS[15]                 : M19       : output : 2.5 V             :         : 5         : N              
+EX_TO_NS[2]                  : M20       : output : 2.5 V             :         : 5         : N              
+EX_CON[7]                    : M21       : output : 2.5 V             :         : 5         : N              
+COUNT[1]                     : M22       : output : 2.5 V             :         : 5         : N              
+PWDATA[6]                    : N1        : input  : 2.5 V             :         : 2         : N              
+fsm_cs[0]                    : N2        : output : 2.5 V             :         : 2         : N              
+GND                          : N3        : gnd    :                   :         :           :                
+VCCIO2                       : N4        : power  :                   : 2.5V    : 2         :                
+COUNT[2]                     : N5        : output : 2.5 V             :         : 2         : N              
+COUNT[30]                    : N6        : output : 2.5 V             :         : 2         : N              
+EX_CON[11]                   : N7        : output : 2.5 V             :         : 2         : N              
+EX_CON[0]                    : N8        : output : 2.5 V             :         : 2         : N              
+VCCINT                       : N9        : power  :                   : 1.2V    :           :                
+GND                          : N10       : gnd    :                   :         :           :                
+GND                          : N11       : gnd    :                   :         :           :                
+GND                          : N12       : gnd    :                   :         :           :                
+GND                          : N13       : gnd    :                   :         :           :                
+EX_TO_NS[19]                 : N14       : output : 2.5 V             :         : 5         : N              
+EX_TO_NS[24]                 : N15       : output : 2.5 V             :         : 5         : N              
+PRDATA[4]                    : N16       : output : 2.5 V             :         : 5         : N              
+COUNT_NS[29]                 : N17       : output : 2.5 V             :         : 5         : N              
+EX_TO[18]                    : N18       : output : 2.5 V             :         : 5         : N              
+EX_CON_NS[29]                : N19       : output : 2.5 V             :         : 5         : N              
+EX_CON[24]                   : N20       : output : 2.5 V             :         : 5         : N              
+EX_TO_NS[25]                 : N21       : output : 2.5 V             :         : 5         : N              
+EX_CON[16]                   : N22       : output : 2.5 V             :         : 5         : N              
+PENABLE                      : P1        : input  : 2.5 V             :         : 2         : N              
+fsm_cs[1]                    : P2        : output : 2.5 V             :         : 2         : N              
+COUNT[20]                    : P3        : output : 2.5 V             :         : 2         : N              
+PWDATA[9]                    : P4        : input  : 2.5 V             :         : 2         : N              
+COUNT[18]                    : P5        : output : 2.5 V             :         : 2         : N              
+EX_TO_NS[22]                 : P6        : output : 2.5 V             :         : 2         : N              
+EX_CON_NS[11]                : P7        : output : 2.5 V             :         : 2         : N              
+EX_TO[10]                    : P8        : output : 2.5 V             :         : 2         : N              
+VCCINT                       : P9        : power  :                   : 1.2V    :           :                
+VCCINT                       : P10       : power  :                   : 1.2V    :           :                
+VCCINT                       : P11       : power  :                   : 1.2V    :           :                
+VCCINT                       : P12       : power  :                   : 1.2V    :           :                
+VCCINT                       : P13       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 5         :                
+EX_TO[5]                     : P15       : output : 2.5 V             :         : 5         : N              
+EX_CON_NS[28]                : P16       : output : 2.5 V             :         : 5         : N              
+COUNT_NS[1]                  : P17       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : P18       : power  :                   : 2.5V    : 5         :                
+GND                          : P19       : gnd    :                   :         :           :                
+fsm_ns[1]                    : P20       : output : 2.5 V             :         : 5         : N              
+COUNT_NS[26]                 : P21       : output : 2.5 V             :         : 5         : N              
+COUNT_NS[11]                 : P22       : output : 2.5 V             :         : 5         : N              
+EX_CON[14]                   : R1        : output : 2.5 V             :         : 2         : N              
+PWDATA[8]                    : R2        : input  : 2.5 V             :         : 2         : N              
+GND                          : R3        : gnd    :                   :         :           :                
+VCCIO2                       : R4        : power  :                   : 2.5V    : 2         :                
+EX_TO[27]                    : R5        : output : 2.5 V             :         : 2         : N              
+EX_CON[26]                   : R6        : output : 2.5 V             :         : 2         : N              
+PRDATA[26]                   : R7        : output : 2.5 V             :         : 2         : N              
+EX_TO_NS[27]                 : R8        : output : 2.5 V             :         : 2         : N              
+PWDATA[26]                   : R9        : input  : 2.5 V             :         : 3         : N              
+EX_CON[10]                   : R10       : output : 2.5 V             :         : 3         : N              
+COUNT[22]                    : R11       : output : 2.5 V             :         : 3         : N              
+PWDATA[27]                   : R12       : input  : 2.5 V             :         : 3         : N              
+PRDATA[17]                   : R13       : output : 2.5 V             :         : 4         : N              
+EX_TO[29]                    : R14       : output : 2.5 V             :         : 4         : N              
+EX_TO[28]                    : R15       : output : 2.5 V             :         : 4         : N              
+PRDATA[30]                   : R16       : output : 2.5 V             :         : 4         : N              
+PRDATA[8]                    : R17       : output : 2.5 V             :         : 5         : N              
+COUNT[17]                    : R18       : output : 2.5 V             :         : 5         : N              
+COUNT[23]                    : R19       : output : 2.5 V             :         : 5         : N              
+EX_TO[24]                    : R20       : output : 2.5 V             :         : 5         : N              
+COUNT[9]                     : R21       : output : 2.5 V             :         : 5         : N              
+COUNT_NS[7]                  : R22       : output : 2.5 V             :         : 5         : N              
+GND+                         : T1        :        :                   :         : 2         :                
+RST_B                        : T2        : input  : 2.5 V             :         : 2         : N              
+EX_TO_NS[6]                  : T3        : output : 2.5 V             :         : 2         : N              
+EX_CON_NS[1]                 : T4        : output : 2.5 V             :         : 2         : N              
+EX_TO_NS[21]                 : T5        : output : 2.5 V             :         : 2         : N              
+VCCA1                        : T6        : power  :                   : 2.5V    :           :                
+COUNT_NS[22]                 : T7        : output : 2.5 V             :         : 2         : N              
+COUNT_NS[23]                 : T8        : output : 2.5 V             :         : 3         : N              
+COUNT_NS[0]                  : T9        : output : 2.5 V             :         : 3         : N              
+EX_TO_NS[30]                 : T10       : output : 2.5 V             :         : 3         : N              
+COUNT[16]                    : T11       : output : 2.5 V             :         : 3         : N              
+EX_CON[25]                   : T12       : output : 2.5 V             :         : 4         : N              
+VCCINT                       : T13       : power  :                   : 1.2V    :           :                
+COUNT_NS[21]                 : T14       : output : 2.5 V             :         : 4         : N              
+EX_TO_NS[7]                  : T15       : output : 2.5 V             :         : 4         : N              
+EX_CON[4]                    : T16       : output : 2.5 V             :         : 4         : N              
+COUNT_NS[10]                 : T17       : output : 2.5 V             :         : 5         : N              
+PRDATA[23]                   : T18       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : T19       : power  :                   : 2.5V    : 5         :                
+GND                          : T20       : gnd    :                   :         :           :                
+GND+                         : T21       :        :                   :         : 5         :                
+GND+                         : T22       :        :                   :         : 5         :                
+COUNT[24]                    : U1        : output : 2.5 V             :         : 2         : N              
+COUNT[29]                    : U2        : output : 2.5 V             :         : 2         : N              
+GND                          : U3        : gnd    :                   :         :           :                
+VCCIO2                       : U4        : power  :                   : 2.5V    : 2         :                
+GNDA1                        : U5        : gnd    :                   :         :           :                
+VCCD_PLL1                    : U6        : power  :                   : 1.2V    :           :                
+COUNT[10]                    : U7        : output : 2.5 V             :         : 3         : N              
+COUNT[28]                    : U8        : output : 2.5 V             :         : 3         : N              
+COUNT_NS[3]                  : U9        : output : 2.5 V             :         : 3         : N              
+PRDATA[29]                   : U10       : output : 2.5 V             :         : 3         : N              
+PRDATA[14]                   : U11       : output : 2.5 V             :         : 3         : N              
+EX_CON_NS[15]                : U12       : output : 2.5 V             :         : 4         : N              
+PRDATA[16]                   : U13       : output : 2.5 V             :         : 4         : N              
+EX_CON[18]                   : U14       : output : 2.5 V             :         : 4         : N              
+fsm_ns[0]                    : U15       : output : 2.5 V             :         : 4         : N              
+VCCINT                       : U16       : power  :                   : 1.2V    :           :                
+VCCINT                       : U17       : power  :                   : 1.2V    :           :                
+VCCA4                        : U18       : power  :                   : 2.5V    :           :                
+EX_CON[30]                   : U19       : output : 2.5 V             :         : 5         : N              
+EX_TO_NS[5]                  : U20       : output : 2.5 V             :         : 5         : N              
+PRDATA[18]                   : U21       : output : 2.5 V             :         : 5         : N              
+EX_TO[23]                    : U22       : output : 2.5 V             :         : 5         : N              
+EX_TO[8]                     : V1        : output : 2.5 V             :         : 2         : N              
+COUNT[21]                    : V2        : output : 2.5 V             :         : 2         : N              
+PWDATA[22]                   : V3        : input  : 2.5 V             :         : 2         : N              
+EX_CON_NS[27]                : V4        : output : 2.5 V             :         : 2         : N              
+EX_TO_NS[11]                 : V5        : output : 2.5 V             :         : 3         : N              
+COUNT_NS[25]                 : V6        : output : 2.5 V             :         : 3         : N              
+COUNT[6]                     : V7        : output : 2.5 V             :         : 3         : N              
+COUNT[14]                    : V8        : output : 2.5 V             :         : 3         : N              
+COUNT_NS[5]                  : V9        : output : 2.5 V             :         : 3         : N              
+PWDATA[3]                    : V10       : input  : 2.5 V             :         : 3         : N              
+COUNT[7]                     : V11       : output : 2.5 V             :         : 3         : N              
+EX_TO[20]                    : V12       : output : 2.5 V             :         : 4         : N              
+EX_TO[4]                     : V13       : output : 2.5 V             :         : 4         : N              
+COUNT_NS[18]                 : V14       : output : 2.5 V             :         : 4         : N              
+EX_TO_NS[13]                 : V15       : output : 2.5 V             :         : 4         : N              
+CNT_START                    : V16       : output : 2.5 V             :         : 4         : N              
+VCCD_PLL4                    : V17       : power  :                   : 1.2V    :           :                
+GNDA4                        : V18       : gnd    :                   :         :           :                
+VCCIO5                       : V19       : power  :                   : 2.5V    : 5         :                
+GND                          : V20       : gnd    :                   :         :           :                
+EX_TO[25]                    : V21       : output : 2.5 V             :         : 5         : N              
+EX_CON_NS[5]                 : V22       : output : 2.5 V             :         : 5         : N              
+EX_TO[6]                     : W1        : output : 2.5 V             :         : 2         : N              
+COUNT_NS[24]                 : W2        : output : 2.5 V             :         : 2         : N              
+GND                          : W3        : gnd    :                   :         :           :                
+VCCIO2                       : W4        : power  :                   : 2.5V    : 2         :                
+VCCIO3                       : W5        : power  :                   : 2.5V    : 3         :                
+EX_TO[11]                    : W6        : output : 2.5 V             :         : 3         : N              
+EX_CON_NS[10]                : W7        : output : 2.5 V             :         : 3         : N              
+EX_CON[8]                    : W8        : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : W9        : power  :                   : 2.5V    : 3         :                
+EX_CON_NS[18]                : W10       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : W11       : power  :                   : 2.5V    : 3         :                
+VCCIO4                       : W12       : power  :                   : 2.5V    : 4         :                
+COUNT[4]                     : W13       : output : 2.5 V             :         : 4         : N              
+PRDATA[21]                   : W14       : output : 2.5 V             :         : 4         : N              
+PRDATA[31]                   : W15       : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : W16       : power  :                   : 2.5V    : 4         :                
+PRDATA[20]                   : W17       : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : W18       : power  :                   : 2.5V    : 4         :                
+PWDATA[31]                   : W19       : input  : 2.5 V             :         : 5         : N              
+EX_CON_NS[4]                 : W20       : output : 2.5 V             :         : 5         : N              
+EX_CON[15]                   : W21       : output : 2.5 V             :         : 5         : N              
+PWDATA[16]                   : W22       : input  : 2.5 V             :         : 5         : N              
+EX_TO_NS[0]                  : Y1        : output : 2.5 V             :         : 2         : N              
+COUNT_NS[27]                 : Y2        : output : 2.5 V             :         : 2         : N              
+PWDATA[13]                   : Y3        : input  : 2.5 V             :         : 3         : N              
+COUNT_NS[13]                 : Y4        : output : 2.5 V             :         : 3         : N              
+GND                          : Y5        : gnd    :                   :         :           :                
+COUNT[8]                     : Y6        : output : 2.5 V             :         : 3         : N              
+EX_TO[2]                     : Y7        : output : 2.5 V             :         : 3         : N              
+COUNT[19]                    : Y8        : output : 2.5 V             :         : 3         : N              
+GND                          : Y9        : gnd    :                   :         :           :                
+EX_TO[19]                    : Y10       : output : 2.5 V             :         : 3         : N              
+GND                          : Y11       : gnd    :                   :         :           :                
+GND                          : Y12       : gnd    :                   :         :           :                
+EX_CON_NS[23]                : Y13       : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : Y14       : power  :                   : 2.5V    : 4         :                
+GND                          : Y15       : gnd    :                   :         :           :                
+GND                          : Y16       : gnd    :                   :         :           :                
+EX_CON[20]                   : Y17       : output : 2.5 V             :         : 4         : N              
+GND                          : Y18       : gnd    :                   :         :           :                
+VCCIO5                       : Y19       : power  :                   : 2.5V    : 5         :                
+GND                          : Y20       : gnd    :                   :         :           :                
+EX_CON[17]                   : Y21       : output : 2.5 V             :         : 5         : N              
+PWDATA[2]                    : Y22       : input  : 2.5 V             :         : 5         : N              

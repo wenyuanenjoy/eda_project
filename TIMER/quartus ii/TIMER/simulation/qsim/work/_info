@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Zircon_Verilog\TIMER\simulation\qsim
+vTIMER
+Z1 !s100 db:@AFC<zdFb0ELYFIT?00
+Z2 IW82XALkmf@Zjdj19Jc8TY0
+Z3 VGFOToBn02^Kk83?PS<MgS2
+Z4 dD:\Zircon_Verilog\TIMER\simulation\qsim
+Z5 w1592316119
+Z6 8TIMER.vo
+Z7 FTIMER.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|TIMER.vo|
+Z10 o-work work -O0
+Z11 n@t@i@m@e@r
+!i10b 1
+!s85 0
+Z12 !s108 1592316120.274000
+Z13 !s107 TIMER.vo|
+!s101 -O0
+vTIMER_vlg_check_tst
+!i10b 1
+Z14 !s100 mT>A3e?45ZnP]J8^C9ahN1
+Z15 Iom:DZRI28fjEP]85g4`6D1
+Z16 V;m85Z:1nm`zCz=OJG51LZ0
+R4
+Z17 w1592316117
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z20 !s108 1592316120.460000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@t@i@m@e@r_vlg_check_tst
+vTIMER_vlg_sample_tst
+!i10b 1
+Z24 !s100 fnM=CX=o=<RL3REn`]HCL3
+Z25 IVUWFMUOWQI:L:SbnbakW61
+Z26 V4D16DP>4@98cRgh^NdMUz1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@t@i@m@e@r_vlg_sample_tst
+vTIMER_vlg_vec_tst
+!i10b 1
+!s100 4?U<0ieX=K4]@z;CRFh[h2
+IP_c9c:njEL[U1JSAEX=4]3
+Z28 VR7ORbCkfAFWiFo8[ch:V32
+R4
+R17
+R18
+R19
+Z29 L0 348
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@t@i@m@e@r_vlg_vec_tst

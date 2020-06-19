@@ -1,0 +1,476 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/16/2020 22:01:55"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    TIMER
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module TIMER_vlg_sample_tst(
+	RST_B,
+	START,
+	SYSCLK,
+	TIME_MIN,
+	TIME_SEC,
+	sampler_tx
+);
+input  RST_B;
+input  START;
+input  SYSCLK;
+input [2:0] TIME_MIN;
+input [5:0] TIME_SEC;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(RST_B or START or SYSCLK or TIME_MIN or TIME_SEC)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module TIMER_vlg_check_tst (
+	MINUTE,
+	SECOND,
+	TIME_UP,
+	sampler_rx
+);
+input [2:0] MINUTE;
+input [5:0] SECOND;
+input  TIME_UP;
+input sampler_rx;
+
+reg [2:0] MINUTE_expected;
+reg [5:0] SECOND_expected;
+reg  TIME_UP_expected;
+
+reg [2:0] MINUTE_prev;
+reg [5:0] SECOND_prev;
+reg  TIME_UP_prev;
+
+reg [2:0] MINUTE_expected_prev;
+reg [5:0] SECOND_expected_prev;
+reg  TIME_UP_expected_prev;
+
+reg [2:0] last_MINUTE_exp;
+reg [5:0] last_SECOND_exp;
+reg  last_TIME_UP_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:3] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 3'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	MINUTE_prev = MINUTE;
+	SECOND_prev = SECOND;
+	TIME_UP_prev = TIME_UP;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	MINUTE_expected_prev = MINUTE_expected;
+	SECOND_expected_prev = SECOND_expected;
+	TIME_UP_expected_prev = TIME_UP_expected;
+end
+
+
+// expected MINUTE[ 2 ]
+initial
+begin
+	MINUTE_expected[2] = 1'bX;
+	MINUTE_expected[2] = #999000 1'b0;
+end 
+// expected MINUTE[ 1 ]
+initial
+begin
+	MINUTE_expected[1] = 1'bX;
+	MINUTE_expected[1] = #999000 1'b0;
+end 
+// expected MINUTE[ 0 ]
+initial
+begin
+	MINUTE_expected[0] = 1'bX;
+	MINUTE_expected[0] = #999000 1'b0;
+end 
+// expected SECOND[ 5 ]
+initial
+begin
+	SECOND_expected[5] = 1'bX;
+	SECOND_expected[5] = #999000 1'b0;
+end 
+// expected SECOND[ 4 ]
+initial
+begin
+	SECOND_expected[4] = 1'bX;
+	SECOND_expected[4] = #999000 1'b0;
+end 
+// expected SECOND[ 3 ]
+initial
+begin
+	SECOND_expected[3] = 1'bX;
+	SECOND_expected[3] = #999000 1'b0;
+end 
+// expected SECOND[ 2 ]
+initial
+begin
+	SECOND_expected[2] = 1'bX;
+	SECOND_expected[2] = #999000 1'b0;
+end 
+// expected SECOND[ 1 ]
+initial
+begin
+	SECOND_expected[1] = 1'bX;
+	SECOND_expected[1] = #999000 1'b0;
+end 
+// expected SECOND[ 0 ]
+initial
+begin
+	SECOND_expected[0] = 1'bX;
+	SECOND_expected[0] = #999000 1'b0;
+end 
+
+// expected TIME_UP
+initial
+begin
+	TIME_UP_expected = 1'bX;
+	TIME_UP_expected = #999000 1'b0;
+end 
+// generate trigger
+always @(MINUTE_expected or MINUTE or SECOND_expected or SECOND or TIME_UP_expected or TIME_UP)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected MINUTE = %b | expected SECOND = %b | expected TIME_UP = %b | ",MINUTE_expected_prev,SECOND_expected_prev,TIME_UP_expected_prev);
+	$display("| real MINUTE = %b | real SECOND = %b | real TIME_UP = %b | ",MINUTE_prev,SECOND_prev,TIME_UP_prev);
+`endif
+	if (
+		( MINUTE_expected_prev[0] !== 1'bx ) && ( MINUTE_prev[0] !== MINUTE_expected_prev[0] )
+		&& ((MINUTE_expected_prev[0] !== last_MINUTE_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port MINUTE[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", MINUTE_expected_prev);
+		$display ("     Real value = %b", MINUTE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_MINUTE_exp[0] = MINUTE_expected_prev[0];
+	end
+	if (
+		( MINUTE_expected_prev[1] !== 1'bx ) && ( MINUTE_prev[1] !== MINUTE_expected_prev[1] )
+		&& ((MINUTE_expected_prev[1] !== last_MINUTE_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port MINUTE[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", MINUTE_expected_prev);
+		$display ("     Real value = %b", MINUTE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_MINUTE_exp[1] = MINUTE_expected_prev[1];
+	end
+	if (
+		( MINUTE_expected_prev[2] !== 1'bx ) && ( MINUTE_prev[2] !== MINUTE_expected_prev[2] )
+		&& ((MINUTE_expected_prev[2] !== last_MINUTE_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port MINUTE[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", MINUTE_expected_prev);
+		$display ("     Real value = %b", MINUTE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_MINUTE_exp[2] = MINUTE_expected_prev[2];
+	end
+	if (
+		( SECOND_expected_prev[0] !== 1'bx ) && ( SECOND_prev[0] !== SECOND_expected_prev[0] )
+		&& ((SECOND_expected_prev[0] !== last_SECOND_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[0] = SECOND_expected_prev[0];
+	end
+	if (
+		( SECOND_expected_prev[1] !== 1'bx ) && ( SECOND_prev[1] !== SECOND_expected_prev[1] )
+		&& ((SECOND_expected_prev[1] !== last_SECOND_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[1] = SECOND_expected_prev[1];
+	end
+	if (
+		( SECOND_expected_prev[2] !== 1'bx ) && ( SECOND_prev[2] !== SECOND_expected_prev[2] )
+		&& ((SECOND_expected_prev[2] !== last_SECOND_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[2] = SECOND_expected_prev[2];
+	end
+	if (
+		( SECOND_expected_prev[3] !== 1'bx ) && ( SECOND_prev[3] !== SECOND_expected_prev[3] )
+		&& ((SECOND_expected_prev[3] !== last_SECOND_exp[3]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[3] = SECOND_expected_prev[3];
+	end
+	if (
+		( SECOND_expected_prev[4] !== 1'bx ) && ( SECOND_prev[4] !== SECOND_expected_prev[4] )
+		&& ((SECOND_expected_prev[4] !== last_SECOND_exp[4]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[4] = SECOND_expected_prev[4];
+	end
+	if (
+		( SECOND_expected_prev[5] !== 1'bx ) && ( SECOND_prev[5] !== SECOND_expected_prev[5] )
+		&& ((SECOND_expected_prev[5] !== last_SECOND_exp[5]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SECOND[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SECOND_expected_prev);
+		$display ("     Real value = %b", SECOND_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_SECOND_exp[5] = SECOND_expected_prev[5];
+	end
+	if (
+		( TIME_UP_expected_prev !== 1'bx ) && ( TIME_UP_prev !== TIME_UP_expected_prev )
+		&& ((TIME_UP_expected_prev !== last_TIME_UP_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port TIME_UP :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", TIME_UP_expected_prev);
+		$display ("     Real value = %b", TIME_UP_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_TIME_UP_exp = TIME_UP_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#3000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module TIMER_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg RST_B;
+reg START;
+reg SYSCLK;
+reg [2:0] TIME_MIN;
+reg [5:0] TIME_SEC;
+// wires                                               
+wire [2:0] MINUTE;
+wire [5:0] SECOND;
+wire TIME_UP;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+TIMER i1 (
+// port map - connection between master ports and signals/registers   
+	.MINUTE(MINUTE),
+	.RST_B(RST_B),
+	.SECOND(SECOND),
+	.START(START),
+	.SYSCLK(SYSCLK),
+	.TIME_MIN(TIME_MIN),
+	.TIME_SEC(TIME_SEC),
+	.TIME_UP(TIME_UP)
+);
+
+// SYSCLK
+initial
+begin
+	SYSCLK = 1'b1;
+	SYSCLK = #5000 1'b0;
+	# 5000;
+	repeat(298)
+	begin
+		SYSCLK = 1'b1;
+		SYSCLK = #5000 1'b0;
+		# 5000;
+	end
+	SYSCLK = 1'b1;
+	SYSCLK = #5000 1'b0;
+end 
+
+// RST_B
+initial
+begin
+	RST_B = 1'b0;
+	RST_B = #10000 1'b1;
+	RST_B = #2510000 1'b0;
+	RST_B = #10000 1'b1;
+end 
+
+// START
+initial
+begin
+	START = 1'b0;
+	START = #20000 1'b1;
+	START = #10000 1'b0;
+	START = #2510000 1'b1;
+	START = #10000 1'b0;
+end 
+// TIME_MIN[ 2 ]
+initial
+begin
+	TIME_MIN[2] = 1'b0;
+end 
+// TIME_MIN[ 1 ]
+initial
+begin
+	TIME_MIN[1] = 1'b1;
+	TIME_MIN[1] = #2500000 1'b0;
+end 
+// TIME_MIN[ 0 ]
+initial
+begin
+	TIME_MIN[0] = 1'b1;
+	TIME_MIN[0] = #2500000 1'b0;
+end 
+// TIME_SEC[ 5 ]
+initial
+begin
+	TIME_SEC[5] = 1'b1;
+	TIME_SEC[5] = #2500000 1'b0;
+end 
+// TIME_SEC[ 4 ]
+initial
+begin
+	TIME_SEC[4] = 1'b1;
+	TIME_SEC[4] = #2500000 1'b0;
+end 
+// TIME_SEC[ 3 ]
+initial
+begin
+	TIME_SEC[3] = 1'b0;
+end 
+// TIME_SEC[ 2 ]
+initial
+begin
+	TIME_SEC[2] = 1'b0;
+end 
+// TIME_SEC[ 1 ]
+initial
+begin
+	TIME_SEC[1] = 1'b0;
+end 
+// TIME_SEC[ 0 ]
+initial
+begin
+	TIME_SEC[0] = 1'b0;
+end 
+
+TIMER_vlg_sample_tst tb_sample (
+	.RST_B(RST_B),
+	.START(START),
+	.SYSCLK(SYSCLK),
+	.TIME_MIN(TIME_MIN),
+	.TIME_SEC(TIME_SEC),
+	.sampler_tx(sampler)
+);
+
+TIMER_vlg_check_tst tb_out(
+	.MINUTE(MINUTE),
+	.SECOND(SECOND),
+	.TIME_UP(TIME_UP),
+	.sampler_rx(sampler)
+);
+endmodule
+

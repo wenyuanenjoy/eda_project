@@ -1,0 +1,1834 @@
+TimeQuest Timing Analyzer report for TIMER
+Tue Jun 16 21:57:13 2020
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'SYSCLK'
+ 13. Slow 1200mV 85C Model Hold: 'SYSCLK'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'SYSCLK'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Slow 1200mV 85C Model Metastability Report
+ 22. Slow 1200mV 0C Model Fmax Summary
+ 23. Slow 1200mV 0C Model Setup Summary
+ 24. Slow 1200mV 0C Model Hold Summary
+ 25. Slow 1200mV 0C Model Recovery Summary
+ 26. Slow 1200mV 0C Model Removal Summary
+ 27. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 28. Slow 1200mV 0C Model Setup: 'SYSCLK'
+ 29. Slow 1200mV 0C Model Hold: 'SYSCLK'
+ 30. Slow 1200mV 0C Model Minimum Pulse Width: 'SYSCLK'
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Propagation Delay
+ 36. Minimum Propagation Delay
+ 37. Slow 1200mV 0C Model Metastability Report
+ 38. Fast 1200mV 0C Model Setup Summary
+ 39. Fast 1200mV 0C Model Hold Summary
+ 40. Fast 1200mV 0C Model Recovery Summary
+ 41. Fast 1200mV 0C Model Removal Summary
+ 42. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 43. Fast 1200mV 0C Model Setup: 'SYSCLK'
+ 44. Fast 1200mV 0C Model Hold: 'SYSCLK'
+ 45. Fast 1200mV 0C Model Minimum Pulse Width: 'SYSCLK'
+ 46. Setup Times
+ 47. Hold Times
+ 48. Clock to Output Times
+ 49. Minimum Clock to Output Times
+ 50. Propagation Delay
+ 51. Minimum Propagation Delay
+ 52. Fast 1200mV 0C Model Metastability Report
+ 53. Multicorner Timing Analysis Summary
+ 54. Setup Times
+ 55. Hold Times
+ 56. Clock to Output Times
+ 57. Minimum Clock to Output Times
+ 58. Propagation Delay
+ 59. Minimum Propagation Delay
+ 60. Board Trace Model Assignments
+ 61. Input Transition Times
+ 62. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 63. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 64. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 65. Setup Transfers
+ 66. Hold Transfers
+ 67. Report TCCS
+ 68. Report RSKM
+ 69. Unconstrained Paths
+ 70. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; TIMER                                              ;
+; Device Family      ; Cyclone IV E                                       ;
+; Device Name        ; EP4CE6E22C8                                        ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; SYSCLK     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SYSCLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 354.61 MHz ; 250.0 MHz       ; SYSCLK     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++--------+--------+-------------------+
+; Clock  ; Slack  ; End Point TNS     ;
++--------+--------+-------------------+
+; SYSCLK ; -1.820 ; -18.674           ;
++--------+--------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; SYSCLK ; 0.433 ; 0.000             ;
++--------+-------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; SYSCLK ; -3.000 ; -20.844                         ;
++--------+--------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'SYSCLK'                                                                          ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -1.820 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.740      ;
+; -1.795 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.715      ;
+; -1.733 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.654      ;
+; -1.732 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 3.126      ;
+; -1.725 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 3.119      ;
+; -1.708 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.629      ;
+; -1.697 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 3.091      ;
+; -1.690 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 3.084      ;
+; -1.666 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.666 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.666 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.666 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.666 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.666 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.574     ; 2.093      ;
+; -1.643 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.563      ;
+; -1.556 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.477      ;
+; -1.551 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.472      ;
+; -1.548 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.942      ;
+; -1.541 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.935      ;
+; -1.467 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.387      ;
+; -1.443 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.363      ;
+; -1.424 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.344      ;
+; -1.424 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.344      ;
+; -1.399 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.319      ;
+; -1.399 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.319      ;
+; -1.387 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.308      ;
+; -1.386 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.307      ;
+; -1.378 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.772      ;
+; -1.377 ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.377 ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.377 ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.377 ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.377 ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.377 ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.298      ;
+; -1.375 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.296      ;
+; -1.371 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.765      ;
+; -1.362 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.283      ;
+; -1.361 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.282      ;
+; -1.351 ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.272      ;
+; -1.251 ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.645      ;
+; -1.247 ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.167      ;
+; -1.247 ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.167      ;
+; -1.245 ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.639      ;
+; -1.245 ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.575     ; 1.671      ;
+; -1.245 ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.575     ; 1.671      ;
+; -1.244 ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.638      ;
+; -1.242 ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.162      ;
+; -1.241 ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.635      ;
+; -1.233 ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 2.153      ;
+; -1.210 ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.131      ;
+; -1.209 ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.130      ;
+; -1.187 ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.575     ; 1.613      ;
+; -1.179 ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.100      ;
+; -1.178 ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.099      ;
+; -1.146 ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 2.067      ;
+; -1.112 ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.506      ;
+; -1.105 ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.499      ;
+; -1.083 ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.477      ;
+; -1.081 ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.475      ;
+; -1.068 ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.989      ;
+; -1.051 ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.971      ;
+; -1.051 ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.971      ;
+; -1.043 ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.964      ;
+; -1.040 ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.961      ;
+; -1.027 ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.947      ;
+; -1.027 ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.947      ;
+; -1.011 ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.932      ;
+; -1.010 ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.931      ;
+; -1.009 ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.930      ;
+; -1.008 ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.929      ;
+; -0.897 ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.817      ;
+; -0.896 ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.816      ;
+; -0.891 ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.812      ;
+; -0.837 ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.757      ;
+; -0.837 ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.757      ;
+; -0.813 ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.734      ;
+; -0.692 ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 1.613      ;
+; -0.671 ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.065      ;
+; -0.659 ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 2.053      ;
+; -0.486 ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.575     ; 0.912      ;
+; -0.478 ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.398      ;
+; -0.416 ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.393      ; 1.810      ;
+; -0.325 ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.245      ;
+; -0.321 ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 1.241      ;
+; -0.313 ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.101     ; 1.213      ;
+; 0.062  ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 0.858      ;
+; 0.062  ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 0.858      ;
+; 0.062  ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 0.858      ;
+; 0.063  ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 0.858      ;
+; 0.063  ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.080     ; 0.858      ;
+; 0.078  ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.101     ; 0.822      ;
+; 0.098  ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.081     ; 0.822      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'SYSCLK'                                                                          ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.433 ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.101      ; 0.746      ;
+; 0.453 ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 0.746      ;
+; 0.454 ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.746      ;
+; 0.466 ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.758      ;
+; 0.466 ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 0.758      ;
+; 0.739 ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.101      ; 1.052      ;
+; 0.773 ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.066      ;
+; 0.774 ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.067      ;
+; 0.810 ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 1.597      ;
+; 0.838 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.130      ;
+; 0.938 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.230      ;
+; 0.968 ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 0.787      ;
+; 0.970 ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.263      ;
+; 1.031 ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.323      ;
+; 1.104 ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 1.891      ;
+; 1.108 ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 1.895      ;
+; 1.112 ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.404      ;
+; 1.205 ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.497      ;
+; 1.284 ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.576      ;
+; 1.285 ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.577      ;
+; 1.321 ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.613      ;
+; 1.322 ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.614      ;
+; 1.327 ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.620      ;
+; 1.351 ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.644      ;
+; 1.355 ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.647      ;
+; 1.375 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.161      ;
+; 1.399 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.185      ;
+; 1.401 ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.187      ;
+; 1.404 ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.696      ;
+; 1.404 ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.696      ;
+; 1.405 ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.697      ;
+; 1.414 ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.706      ;
+; 1.414 ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.706      ;
+; 1.425 ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.211      ;
+; 1.449 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.741      ;
+; 1.450 ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.742      ;
+; 1.456 ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 2.243      ;
+; 1.467 ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 2.254      ;
+; 1.535 ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.321      ;
+; 1.541 ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.833      ;
+; 1.549 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.335      ;
+; 1.559 ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.345      ;
+; 1.564 ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.856      ;
+; 1.566 ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.858      ;
+; 1.566 ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 1.858      ;
+; 1.573 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.359      ;
+; 1.595 ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 2.382      ;
+; 1.606 ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.575      ; 2.393      ;
+; 1.615 ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 1.434      ;
+; 1.663 ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 1.482      ;
+; 1.663 ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 1.482      ;
+; 1.668 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.454      ;
+; 1.690 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.476      ;
+; 1.692 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.478      ;
+; 1.695 ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 1.988      ;
+; 1.714 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.574      ; 2.500      ;
+; 1.720 ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.012      ;
+; 1.727 ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.019      ;
+; 1.728 ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.020      ;
+; 1.757 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.049      ;
+; 1.758 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.050      ;
+; 1.769 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.061      ;
+; 1.770 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.062      ;
+; 1.795 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.087      ;
+; 1.811 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.103      ;
+; 1.860 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.152      ;
+; 1.861 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.153      ;
+; 1.864 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.156      ;
+; 1.865 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.157      ;
+; 1.930 ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.930 ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.930 ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.930 ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.930 ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.930 ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.081      ; 2.223      ;
+; 1.947 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.239      ;
+; 1.970 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.262      ;
+; 2.126 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.418      ;
+; 2.259 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.551      ;
+; 2.263 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.080      ; 2.555      ;
+; 2.328 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
+; 2.328 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
+; 2.328 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
+; 2.328 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
+; 2.328 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
+; 2.328 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.393     ; 2.147      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'SYSCLK'                                                            ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SYSCLK ; Rise       ; SYSCLK                       ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.00                     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.count                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.done                   ;
+; 0.279  ; 0.499        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; state.count                  ;
+; 0.279  ; 0.499        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; state.done                   ;
+; 0.286  ; 0.506        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; 0.286  ; 0.506        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; 0.286  ; 0.506        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; 0.286  ; 0.506        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; state.00                     ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; 0.288  ; 0.508        ; 0.220          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; 0.304  ; 0.492        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00                     ;
+; 0.311  ; 0.499        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count                  ;
+; 0.311  ; 0.499        ; 0.188          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done                   ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
+; 0.444  ; 0.444        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.444  ; 0.444        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.444  ; 0.444        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.444  ; 0.444        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00|clk                 ;
+; 0.451  ; 0.451        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.451  ; 0.451        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done|clk               ;
+; 0.454  ; 0.454        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.467  ; 0.467        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.467  ; 0.467        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.532  ; 0.532        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.532  ; 0.532        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.546  ; 0.546        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.548  ; 0.548        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.548  ; 0.548        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.done|clk               ;
+; 0.555  ; 0.555        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.555  ; 0.555        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.555  ; 0.555        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.555  ; 0.555        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.00|clk                 ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; START        ; SYSCLK     ; 3.484 ; 3.687 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; 6.292 ; 6.445 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; 5.948 ; 6.147 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; 5.384 ; 5.646 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; 6.292 ; 6.445 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; 6.733 ; 6.870 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; 6.471 ; 6.617 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; 6.733 ; 6.870 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; 6.094 ; 6.304 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; 6.487 ; 6.646 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; 5.934 ; 6.170 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; 4.759 ; 4.961 ; Rise       ; SYSCLK          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; START        ; SYSCLK     ; -1.587 ; -1.834 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; -2.624 ; -2.867 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; -2.933 ; -3.174 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; -2.624 ; -2.867 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; -2.811 ; -2.968 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; -2.434 ; -2.682 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; -3.540 ; -3.697 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; -3.524 ; -3.704 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; -3.055 ; -3.285 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; -2.875 ; -3.016 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; -2.627 ; -2.811 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; -2.434 ; -2.682 ; Rise       ; SYSCLK          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 8.965 ; 8.890 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 8.965 ; 8.890 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 7.019 ; 6.971 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 6.995 ; 6.947 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 8.846 ; 8.782 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 7.773 ; 7.572 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 7.491 ; 7.343 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 7.837 ; 7.681 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 7.081 ; 6.962 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 8.846 ; 8.782 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 8.678 ; 8.469 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 8.796 ; 8.725 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 6.755 ; 6.707 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 8.705 ; 8.635 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 6.779 ; 6.730 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 6.755 ; 6.707 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 6.839 ; 6.723 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 7.504 ; 7.309 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 7.233 ; 7.088 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 7.565 ; 7.413 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 6.839 ; 6.723 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 8.533 ; 8.470 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 8.372 ; 8.169 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 7.887 ; 7.661 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------+
+; Propagation Delay                                           ;
++-------------+-------------+-------+--------+--------+-------+
+; Input Port  ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++-------------+-------------+-------+--------+--------+-------+
+; START       ; TIME_UP     ; 8.922 ;        ;        ; 9.019 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 11.469 ; 11.922 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 10.905 ; 11.421 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 11.813 ; 12.220 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 11.992 ; 12.392 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 12.254 ; 12.645 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 11.615 ; 12.079 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 12.008 ; 12.421 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 11.455 ; 11.945 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 10.280 ; 10.736 ;       ;
++-------------+-------------+-------+--------+--------+-------+
+
+
++-------------------------------------------------------------+
+; Minimum Propagation Delay                                   ;
++-------------+-------------+-------+--------+--------+-------+
+; Input Port  ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++-------------+-------------+-------+--------+--------+-------+
+; START       ; TIME_UP     ; 8.608 ;        ;        ; 8.699 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 11.051 ; 11.490 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 10.510 ; 11.008 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 11.381 ; 11.775 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 11.554 ; 11.941 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 11.774 ; 12.163 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 11.160 ; 11.620 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 11.538 ; 11.948 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 11.007 ; 11.491 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 9.911  ; 10.351 ;       ;
++-------------+-------------+-------+--------+--------+-------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 382.85 MHz ; 250.0 MHz       ; SYSCLK     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; SYSCLK ; -1.612 ; -16.554          ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; SYSCLK ; 0.383 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; SYSCLK ; -3.000 ; -20.844                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'SYSCLK'                                                                           ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -1.612 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.541      ;
+; -1.610 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.539      ;
+; -1.519 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.519 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.519 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.519 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.519 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.519 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.544     ; 1.977      ;
+; -1.517 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.900      ;
+; -1.514 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.444      ;
+; -1.512 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.442      ;
+; -1.503 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.886      ;
+; -1.483 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.866      ;
+; -1.478 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.407      ;
+; -1.469 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.852      ;
+; -1.430 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.360      ;
+; -1.380 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.310      ;
+; -1.357 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.740      ;
+; -1.343 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.726      ;
+; -1.335 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.264      ;
+; -1.268 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.197      ;
+; -1.237 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.167      ;
+; -1.217 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.146      ;
+; -1.217 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.146      ;
+; -1.216 ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.216 ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.216 ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.216 ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.216 ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.216 ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.071     ; 2.147      ;
+; -1.215 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.144      ;
+; -1.215 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.144      ;
+; -1.199 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.582      ;
+; -1.185 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.568      ;
+; -1.170 ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.100      ;
+; -1.168 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.098      ;
+; -1.167 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.097      ;
+; -1.166 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.096      ;
+; -1.165 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.095      ;
+; -1.083 ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.012      ;
+; -1.083 ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.012      ;
+; -1.081 ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 2.011      ;
+; -1.081 ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.464      ;
+; -1.077 ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 2.461      ;
+; -1.075 ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 2.004      ;
+; -1.067 ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.450      ;
+; -1.063 ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 2.447      ;
+; -1.047 ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.545     ; 1.504      ;
+; -1.046 ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.545     ; 1.503      ;
+; -1.034 ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.964      ;
+; -1.033 ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.963      ;
+; -1.001 ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.545     ; 1.458      ;
+; -0.997 ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.927      ;
+; -0.995 ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.925      ;
+; -0.977 ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.907      ;
+; -0.953 ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 2.337      ;
+; -0.948 ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.878      ;
+; -0.940 ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.869      ;
+; -0.940 ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.869      ;
+; -0.939 ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 2.323      ;
+; -0.921 ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.304      ;
+; -0.907 ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.381      ; 2.290      ;
+; -0.891 ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.821      ;
+; -0.890 ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.820      ;
+; -0.874 ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.804      ;
+; -0.873 ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.802      ;
+; -0.873 ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.802      ;
+; -0.872 ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.802      ;
+; -0.861 ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.791      ;
+; -0.837 ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.767      ;
+; -0.742 ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.672      ;
+; -0.741 ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.671      ;
+; -0.709 ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.639      ;
+; -0.680 ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.609      ;
+; -0.680 ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.073     ; 1.609      ;
+; -0.633 ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.563      ;
+; -0.541 ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.471      ;
+; -0.512 ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 1.896      ;
+; -0.494 ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 1.878      ;
+; -0.374 ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.545     ; 0.831      ;
+; -0.360 ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.290      ;
+; -0.288 ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.382      ; 1.672      ;
+; -0.193 ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.123      ;
+; -0.189 ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 1.119      ;
+; -0.179 ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.091     ; 1.090      ;
+; 0.160  ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.770      ;
+; 0.160  ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.770      ;
+; 0.160  ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.770      ;
+; 0.160  ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.770      ;
+; 0.160  ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.770      ;
+; 0.166  ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.091     ; 0.745      ;
+; 0.185  ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.072     ; 0.745      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'SYSCLK'                                                                           ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.383 ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.091      ; 0.669      ;
+; 0.402 ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.669      ;
+; 0.417 ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.684      ;
+; 0.417 ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.684      ;
+; 0.688 ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.091      ; 0.974      ;
+; 0.716 ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 1.456      ;
+; 0.716 ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.983      ;
+; 0.720 ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 0.987      ;
+; 0.785 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.052      ;
+; 0.854 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.121      ;
+; 0.912 ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.179      ;
+; 0.914 ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.382     ; 0.727      ;
+; 0.967 ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.234      ;
+; 0.990 ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 1.730      ;
+; 1.011 ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 1.751      ;
+; 1.023 ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.290      ;
+; 1.122 ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.389      ;
+; 1.211 ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.478      ;
+; 1.215 ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.482      ;
+; 1.216 ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.483      ;
+; 1.216 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 1.955      ;
+; 1.221 ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.487      ;
+; 1.221 ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.487      ;
+; 1.231 ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.498      ;
+; 1.239 ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 1.978      ;
+; 1.242 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 1.981      ;
+; 1.255 ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.522      ;
+; 1.265 ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.004      ;
+; 1.269 ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.536      ;
+; 1.284 ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.551      ;
+; 1.285 ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.552      ;
+; 1.288 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.555      ;
+; 1.288 ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.555      ;
+; 1.290 ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.556      ;
+; 1.290 ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.556      ;
+; 1.294 ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 2.034      ;
+; 1.320 ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 2.060      ;
+; 1.366 ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.105      ;
+; 1.385 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.124      ;
+; 1.392 ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.659      ;
+; 1.392 ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.131      ;
+; 1.397 ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.663      ;
+; 1.397 ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.663      ;
+; 1.411 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.150      ;
+; 1.422 ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 2.162      ;
+; 1.443 ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.710      ;
+; 1.448 ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.545      ; 2.188      ;
+; 1.481 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.220      ;
+; 1.507 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.246      ;
+; 1.512 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.251      ;
+; 1.521 ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.382     ; 1.334      ;
+; 1.538 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.544      ; 2.277      ;
+; 1.541 ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.808      ;
+; 1.564 ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.830      ;
+; 1.569 ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.382     ; 1.382      ;
+; 1.569 ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.382     ; 1.382      ;
+; 1.574 ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.840      ;
+; 1.574 ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.840      ;
+; 1.618 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.885      ;
+; 1.619 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.886      ;
+; 1.633 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.899      ;
+; 1.648 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.915      ;
+; 1.650 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.917      ;
+; 1.666 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 1.933      ;
+; 1.697 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.963      ;
+; 1.697 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.963      ;
+; 1.720 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.986      ;
+; 1.720 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 1.986      ;
+; 1.740 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 2.006      ;
+; 1.774 ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.774 ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.774 ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.774 ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.774 ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.774 ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.073      ; 2.042      ;
+; 1.796 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.072      ; 2.063      ;
+; 1.917 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 2.183      ;
+; 2.040 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 2.306      ;
+; 2.063 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.071      ; 2.329      ;
+; 2.137 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
+; 2.137 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
+; 2.137 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
+; 2.137 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
+; 2.137 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
+; 2.137 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.381     ; 1.951      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'SYSCLK'                                                             ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SYSCLK ; Rise       ; SYSCLK                       ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.00                     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.count                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; SYSCLK ; Rise       ; state.done                   ;
+; 0.225  ; 0.441        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.count                  ;
+; 0.225  ; 0.441        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.done                   ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; 0.273  ; 0.489        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; 0.274  ; 0.490        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; 0.274  ; 0.490        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; 0.274  ; 0.490        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; 0.274  ; 0.490        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.00                     ;
+; 0.324  ; 0.508        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; 0.324  ; 0.508        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; 0.324  ; 0.508        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; 0.324  ; 0.508        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00                     ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; 0.325  ; 0.509        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; 0.371  ; 0.555        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count                  ;
+; 0.371  ; 0.555        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done                   ;
+; 0.456  ; 0.456        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.456  ; 0.456        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.456  ; 0.456        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.456  ; 0.456        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00|clk                 ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.457  ; 0.457        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
+; 0.475  ; 0.475        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.479  ; 0.479        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.479  ; 0.479        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.495  ; 0.495        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.495  ; 0.495        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.done|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.504  ; 0.504        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.504  ; 0.504        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done|clk               ;
+; 0.521  ; 0.521        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.521  ; 0.521        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.525  ; 0.525        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.542  ; 0.542        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
+; 0.543  ; 0.543        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.543  ; 0.543        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.543  ; 0.543        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.543  ; 0.543        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.00|clk                 ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; START        ; SYSCLK     ; 3.148 ; 3.163 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; 5.684 ; 5.778 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; 5.363 ; 5.503 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; 4.817 ; 5.064 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; 5.684 ; 5.778 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; 6.113 ; 6.171 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; 5.897 ; 5.922 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; 6.113 ; 6.171 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; 5.483 ; 5.661 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; 5.895 ; 5.971 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; 5.319 ; 5.557 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; 4.278 ; 4.393 ; Rise       ; SYSCLK          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; START        ; SYSCLK     ; -1.372 ; -1.456 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; -2.341 ; -2.384 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; -2.618 ; -2.660 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; -2.341 ; -2.384 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; -2.495 ; -2.515 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; -2.096 ; -2.297 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; -3.181 ; -3.122 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; -3.153 ; -3.128 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; -2.707 ; -2.780 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; -2.620 ; -2.519 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; -2.293 ; -2.337 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; -2.096 ; -2.297 ; Rise       ; SYSCLK          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 8.160 ; 7.951 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 8.160 ; 7.951 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 6.382 ; 6.304 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 6.361 ; 6.282 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 8.156 ; 7.919 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 7.156 ; 6.835 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 6.866 ; 6.636 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 7.202 ; 6.928 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 6.467 ; 6.291 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 8.156 ; 7.919 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 7.993 ; 7.650 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 8.104 ; 7.899 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 6.124 ; 6.047 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 7.903 ; 7.702 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 6.145 ; 6.069 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 6.124 ; 6.047 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 6.226 ; 6.056 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 6.888 ; 6.579 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 6.610 ; 6.387 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 6.932 ; 6.667 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 6.226 ; 6.056 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 7.848 ; 7.619 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 7.691 ; 7.360 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 7.214 ; 6.912 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------+
+; Propagation Delay                                           ;
++-------------+-------------+-------+--------+--------+-------+
+; Input Port  ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++-------------+-------------+-------+--------+--------+-------+
+; START       ; TIME_UP     ; 8.098 ;        ;        ; 7.962 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 10.285 ; 10.819 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 9.739  ; 10.380 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 10.606 ; 11.094 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 10.819 ; 11.238 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 11.035 ; 11.487 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 10.405 ; 10.977 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 10.817 ; 11.287 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 10.241 ; 10.873 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 9.200  ; 9.709  ;       ;
++-------------+-------------+-------+--------+--------+-------+
+
+
++-------------------------------------------------------------+
+; Minimum Propagation Delay                                   ;
++-------------+-------------+-------+--------+--------+-------+
+; Input Port  ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++-------------+-------------+-------+--------+--------+-------+
+; START       ; TIME_UP     ; 7.796 ;        ;        ; 7.664 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 9.894  ; 10.409 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 9.369  ; 9.987  ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 10.201 ; 10.671 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 10.406 ; 10.810 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 10.584 ; 11.025 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 9.979  ; 10.536 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 10.375 ; 10.834 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 9.823  ; 10.436 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 8.851  ; 9.343  ;       ;
++-------------+-------------+-------+--------+--------+-------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; SYSCLK ; -0.251 ; -1.714           ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; SYSCLK ; 0.179 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; SYSCLK ; -3.000 ; -15.814                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'SYSCLK'                                                                           ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -0.251 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.201      ;
+; -0.244 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.194      ;
+; -0.214 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.165      ;
+; -0.207 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.158      ;
+; -0.181 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.322      ;
+; -0.175 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.316      ;
+; -0.173 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.124      ;
+; -0.171 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.312      ;
+; -0.165 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.306      ;
+; -0.162 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.112      ;
+; -0.141 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.141 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.141 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.141 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.141 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.141 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.234     ; 0.894      ;
+; -0.125 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.076      ;
+; -0.083 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.224      ;
+; -0.078 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.028      ;
+; -0.078 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.028      ;
+; -0.078 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.028      ;
+; -0.077 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.218      ;
+; -0.071 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.021      ;
+; -0.071 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 1.021      ;
+; -0.057 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.008      ;
+; -0.055 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 1.006      ;
+; -0.047 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.998      ;
+; -0.046 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.997      ;
+; -0.041 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.992      ;
+; -0.020 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.161      ;
+; -0.019 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.969      ;
+; -0.014 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.155      ;
+; 0.004  ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.947      ;
+; 0.011  ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.939      ;
+; 0.011  ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.939      ;
+; 0.017  ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.933      ;
+; 0.017  ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.124      ;
+; 0.018  ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 1.124      ;
+; 0.021  ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.021  ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.021  ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.021  ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.021  ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.021  ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.035     ; 0.931      ;
+; 0.023  ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.118      ;
+; 0.024  ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 1.118      ;
+; 0.033  ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.235     ; 0.719      ;
+; 0.033  ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.235     ; 0.719      ;
+; 0.035  ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.916      ;
+; 0.036  ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.915      ;
+; 0.041  ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.910      ;
+; 0.043  ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.908      ;
+; 0.054  ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.897      ;
+; 0.057  ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.235     ; 0.695      ;
+; 0.066  ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.885      ;
+; 0.068  ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.073      ;
+; 0.074  ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.154      ; 1.067      ;
+; 0.090  ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 1.052      ;
+; 0.092  ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.859      ;
+; 0.095  ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.855      ;
+; 0.095  ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.855      ;
+; 0.096  ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 1.046      ;
+; 0.099  ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.852      ;
+; 0.104  ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.847      ;
+; 0.106  ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.845      ;
+; 0.107  ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.844      ;
+; 0.119  ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.832      ;
+; 0.120  ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.831      ;
+; 0.141  ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.809      ;
+; 0.142  ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.808      ;
+; 0.181  ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.770      ;
+; 0.190  ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.760      ;
+; 0.190  ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.037     ; 0.760      ;
+; 0.200  ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.751      ;
+; 0.200  ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.751      ;
+; 0.201  ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.750      ;
+; 0.265  ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.686      ;
+; 0.276  ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 0.866      ;
+; 0.285  ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 0.857      ;
+; 0.346  ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.605      ;
+; 0.373  ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.235     ; 0.379      ;
+; 0.399  ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; 0.155      ; 0.743      ;
+; 0.419  ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.044     ; 0.524      ;
+; 0.420  ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.531      ;
+; 0.424  ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.527      ;
+; 0.592  ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592  ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592  ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592  ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592  ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.359      ;
+; 0.593  ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.044     ; 0.350      ;
+; 0.601  ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 1.000        ; -0.036     ; 0.350      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'SYSCLK'                                                                           ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.179 ; state.count    ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.044      ; 0.307      ;
+; 0.187 ; MINUTE[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; MINUTE[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; MINUTE[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; SECOND[5]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; SECOND[2]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; SECOND[4]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; SECOND[1]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; state.00       ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.307      ;
+; 0.194 ; SECOND[3]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; SECOND[0]~reg0 ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.314      ;
+; 0.297 ; state.count    ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.044      ; 0.425      ;
+; 0.310 ; MINUTE[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.430      ;
+; 0.312 ; MINUTE[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.432      ;
+; 0.342 ; SECOND[1]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.462      ;
+; 0.353 ; state.00       ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.672      ;
+; 0.376 ; MINUTE[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.496      ;
+; 0.382 ; SECOND[2]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.502      ;
+; 0.396 ; state.done     ; state.00       ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.155     ; 0.325      ;
+; 0.404 ; SECOND[4]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.524      ;
+; 0.458 ; MINUTE[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.777      ;
+; 0.458 ; MINUTE[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.777      ;
+; 0.460 ; SECOND[1]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.580      ;
+; 0.480 ; SECOND[5]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.600      ;
+; 0.510 ; SECOND[3]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.630      ;
+; 0.511 ; SECOND[3]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.631      ;
+; 0.519 ; SECOND[3]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.638      ;
+; 0.519 ; SECOND[3]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.638      ;
+; 0.546 ; SECOND[4]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.666      ;
+; 0.553 ; SECOND[0]~reg0 ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.673      ;
+; 0.563 ; state.00       ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.683      ;
+; 0.563 ; SECOND[4]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.881      ;
+; 0.563 ; SECOND[2]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.881      ;
+; 0.566 ; SECOND[4]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.884      ;
+; 0.566 ; SECOND[2]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.884      ;
+; 0.568 ; state.00       ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.688      ;
+; 0.574 ; MINUTE[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.893      ;
+; 0.577 ; MINUTE[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.896      ;
+; 0.590 ; SECOND[2]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.710      ;
+; 0.591 ; SECOND[2]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.711      ;
+; 0.603 ; SECOND[5]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.723      ;
+; 0.609 ; SECOND[2]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.728      ;
+; 0.609 ; SECOND[2]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.728      ;
+; 0.610 ; SECOND[0]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.730      ;
+; 0.610 ; SECOND[0]~reg0 ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.730      ;
+; 0.611 ; SECOND[5]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.730      ;
+; 0.611 ; SECOND[5]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.730      ;
+; 0.615 ; SECOND[5]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.933      ;
+; 0.618 ; SECOND[5]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.936      ;
+; 0.619 ; SECOND[3]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.739      ;
+; 0.633 ; MINUTE[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.952      ;
+; 0.636 ; MINUTE[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.235      ; 0.955      ;
+; 0.641 ; SECOND[1]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.959      ;
+; 0.644 ; SECOND[1]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.962      ;
+; 0.652 ; state.count    ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.155     ; 0.581      ;
+; 0.661 ; SECOND[3]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.979      ;
+; 0.664 ; SECOND[3]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.982      ;
+; 0.666 ; state.count    ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.155     ; 0.595      ;
+; 0.666 ; state.count    ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.155     ; 0.595      ;
+; 0.673 ; SECOND[3]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.792      ;
+; 0.677 ; SECOND[4]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.796      ;
+; 0.677 ; SECOND[4]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.796      ;
+; 0.681 ; SECOND[0]~reg0 ; state.done     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 0.999      ;
+; 0.684 ; SECOND[0]~reg0 ; state.count    ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.234      ; 1.002      ;
+; 0.702 ; SECOND[0]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.822      ;
+; 0.703 ; SECOND[0]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.823      ;
+; 0.711 ; SECOND[5]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.831      ;
+; 0.712 ; SECOND[1]~reg0 ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.832      ;
+; 0.713 ; SECOND[1]~reg0 ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.833      ;
+; 0.716 ; state.00       ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.836      ;
+; 0.738 ; SECOND[0]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.857      ;
+; 0.738 ; SECOND[0]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.857      ;
+; 0.739 ; SECOND[1]~reg0 ; MINUTE[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.858      ;
+; 0.739 ; SECOND[1]~reg0 ; MINUTE[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.858      ;
+; 0.765 ; SECOND[5]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.884      ;
+; 0.776 ; SECOND[2]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.895      ;
+; 0.777 ; SECOND[4]~reg0 ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.036      ; 0.897      ;
+; 0.818 ; state.00       ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.818 ; state.00       ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.818 ; state.00       ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.818 ; state.00       ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.818 ; state.00       ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.818 ; state.00       ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.037      ; 0.939      ;
+; 0.831 ; SECOND[4]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 0.950      ;
+; 0.892 ; SECOND[0]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 1.011      ;
+; 0.893 ; SECOND[1]~reg0 ; MINUTE[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.035      ; 1.012      ;
+; 0.934 ; state.count    ; SECOND[5]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
+; 0.934 ; state.count    ; SECOND[2]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
+; 0.934 ; state.count    ; SECOND[4]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
+; 0.934 ; state.count    ; SECOND[3]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
+; 0.934 ; state.count    ; SECOND[0]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
+; 0.934 ; state.count    ; SECOND[1]~reg0 ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.154     ; 0.864      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'SYSCLK'                                                             ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SYSCLK ; Rise       ; SYSCLK                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; state.00                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; state.count                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SYSCLK ; Rise       ; state.done                   ;
+; -0.092 ; 0.092        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count                  ;
+; -0.092 ; 0.092        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done                   ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00                     ;
+; 0.088  ; 0.088        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.088  ; 0.088        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.done|clk               ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; state.00|clk                 ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SYSCLK ; Rise       ; SYSCLK~input|i               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.00                     ;
+; 0.688  ; 0.904        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.count                  ;
+; 0.688  ; 0.904        ; 0.216          ; High Pulse Width ; SYSCLK ; Rise       ; state.done                   ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|inclk[0] ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~inputclkctrl|outclk   ;
+; 0.880  ; 0.880        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SYSCLK~input|o               ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[0]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[1]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; MINUTE[2]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[0]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[1]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[2]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[3]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[4]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; SECOND[5]~reg0|clk           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.00|clk                 ;
+; 0.910  ; 0.910        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.count|clk              ;
+; 0.910  ; 0.910        ; 0.000          ; High Pulse Width ; SYSCLK ; Rise       ; state.done|clk               ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; START        ; SYSCLK     ; 1.557 ; 2.155 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; 2.784 ; 3.296 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; 2.638 ; 3.142 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; 2.403 ; 2.884 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; 2.784 ; 3.296 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; 2.957 ; 3.475 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; 2.830 ; 3.375 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; 2.957 ; 3.475 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; 2.696 ; 3.183 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; 2.850 ; 3.382 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; 2.657 ; 3.134 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; 2.129 ; 2.655 ; Rise       ; SYSCLK          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; START        ; SYSCLK     ; -0.778 ; -1.368 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; -1.178 ; -1.778 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; -1.313 ; -1.920 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; -1.178 ; -1.778 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; -1.302 ; -1.875 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; -1.178 ; -1.675 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; -1.553 ; -2.164 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; -1.546 ; -2.158 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; -1.372 ; -1.956 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; -1.281 ; -1.935 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; -1.191 ; -1.791 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; -1.178 ; -1.675 ; Rise       ; SYSCLK          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 4.416 ; 4.556 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 4.416 ; 4.556 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 3.310 ; 3.387 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 3.298 ; 3.369 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 4.097 ; 4.301 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 3.596 ; 3.688 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 3.492 ; 3.569 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 3.609 ; 3.712 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 3.310 ; 3.366 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 4.097 ; 4.301 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 4.015 ; 4.164 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 4.017 ; 4.158 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 3.192 ; 3.261 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 4.304 ; 4.440 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 3.204 ; 3.278 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 3.192 ; 3.261 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 3.204 ; 3.258 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 3.479 ; 3.568 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 3.379 ; 3.453 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 3.491 ; 3.590 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 3.204 ; 3.258 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 3.960 ; 4.155 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 3.881 ; 4.024 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 3.650 ; 3.689 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------+
+; Propagation Delay                                         ;
++-------------+-------------+-------+-------+-------+-------+
+; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++-------------+-------------+-------+-------+-------+-------+
+; START       ; TIME_UP     ; 4.215 ;       ;       ; 4.860 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 5.465 ; 5.884 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 5.230 ; 5.626 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 5.611 ; 6.038 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 5.657 ; 6.117 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 5.784 ; 6.217 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 5.523 ; 5.925 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 5.677 ; 6.124 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 5.484 ; 5.876 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 4.956 ; 5.397 ;       ;
++-------------+-------------+-------+-------+-------+-------+
+
+
++-----------------------------------------------------------+
+; Minimum Propagation Delay                                 ;
++-------------+-------------+-------+-------+-------+-------+
+; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++-------------+-------------+-------+-------+-------+-------+
+; START       ; TIME_UP     ; 4.075 ;       ;       ; 4.710 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 5.277 ; 5.694 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 5.050 ; 5.445 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 5.417 ; 5.842 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 5.461 ; 5.916 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 5.568 ; 6.006 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 5.318 ; 5.726 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 5.465 ; 5.916 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 5.279 ; 5.678 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 4.787 ; 5.225 ;       ;
++-------------+-------------+-------+-------+-------+-------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.820  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+;  SYSCLK          ; -1.820  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -18.674 ; 0.0   ; 0.0      ; 0.0     ; -20.844             ;
+;  SYSCLK          ; -18.674 ; 0.000 ; N/A      ; N/A     ; -20.844             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; START        ; SYSCLK     ; 3.484 ; 3.687 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; 6.292 ; 6.445 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; 5.948 ; 6.147 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; 5.384 ; 5.646 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; 6.292 ; 6.445 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; 6.733 ; 6.870 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; 6.471 ; 6.617 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; 6.733 ; 6.870 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; 6.094 ; 6.304 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; 6.487 ; 6.646 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; 5.934 ; 6.170 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; 4.759 ; 4.961 ; Rise       ; SYSCLK          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; START        ; SYSCLK     ; -0.778 ; -1.368 ; Rise       ; SYSCLK          ;
+; TIME_MIN[*]  ; SYSCLK     ; -1.178 ; -1.778 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[0] ; SYSCLK     ; -1.313 ; -1.920 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[1] ; SYSCLK     ; -1.178 ; -1.778 ; Rise       ; SYSCLK          ;
+;  TIME_MIN[2] ; SYSCLK     ; -1.302 ; -1.875 ; Rise       ; SYSCLK          ;
+; TIME_SEC[*]  ; SYSCLK     ; -1.178 ; -1.675 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[0] ; SYSCLK     ; -1.553 ; -2.164 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[1] ; SYSCLK     ; -1.546 ; -2.158 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[2] ; SYSCLK     ; -1.372 ; -1.956 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[3] ; SYSCLK     ; -1.281 ; -1.935 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[4] ; SYSCLK     ; -1.191 ; -1.791 ; Rise       ; SYSCLK          ;
+;  TIME_SEC[5] ; SYSCLK     ; -1.178 ; -1.675 ; Rise       ; SYSCLK          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 8.965 ; 8.890 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 8.965 ; 8.890 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 7.019 ; 6.971 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 6.995 ; 6.947 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 8.846 ; 8.782 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 7.773 ; 7.572 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 7.491 ; 7.343 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 7.837 ; 7.681 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 7.081 ; 6.962 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 8.846 ; 8.782 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 8.678 ; 8.469 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 8.796 ; 8.725 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; MINUTE[*]  ; SYSCLK     ; 3.192 ; 3.261 ; Rise       ; SYSCLK          ;
+;  MINUTE[0] ; SYSCLK     ; 4.304 ; 4.440 ; Rise       ; SYSCLK          ;
+;  MINUTE[1] ; SYSCLK     ; 3.204 ; 3.278 ; Rise       ; SYSCLK          ;
+;  MINUTE[2] ; SYSCLK     ; 3.192 ; 3.261 ; Rise       ; SYSCLK          ;
+; SECOND[*]  ; SYSCLK     ; 3.204 ; 3.258 ; Rise       ; SYSCLK          ;
+;  SECOND[0] ; SYSCLK     ; 3.479 ; 3.568 ; Rise       ; SYSCLK          ;
+;  SECOND[1] ; SYSCLK     ; 3.379 ; 3.453 ; Rise       ; SYSCLK          ;
+;  SECOND[2] ; SYSCLK     ; 3.491 ; 3.590 ; Rise       ; SYSCLK          ;
+;  SECOND[3] ; SYSCLK     ; 3.204 ; 3.258 ; Rise       ; SYSCLK          ;
+;  SECOND[4] ; SYSCLK     ; 3.960 ; 4.155 ; Rise       ; SYSCLK          ;
+;  SECOND[5] ; SYSCLK     ; 3.881 ; 4.024 ; Rise       ; SYSCLK          ;
+; TIME_UP    ; SYSCLK     ; 3.650 ; 3.689 ; Rise       ; SYSCLK          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------+
+; Propagation Delay                                           ;
++-------------+-------------+-------+--------+--------+-------+
+; Input Port  ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++-------------+-------------+-------+--------+--------+-------+
+; START       ; TIME_UP     ; 8.922 ;        ;        ; 9.019 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 11.469 ; 11.922 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 10.905 ; 11.421 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 11.813 ; 12.220 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 11.992 ; 12.392 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 12.254 ; 12.645 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 11.615 ; 12.079 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 12.008 ; 12.421 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 11.455 ; 11.945 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 10.280 ; 10.736 ;       ;
++-------------+-------------+-------+--------+--------+-------+
+
+
++-----------------------------------------------------------+
+; Minimum Propagation Delay                                 ;
++-------------+-------------+-------+-------+-------+-------+
+; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++-------------+-------------+-------+-------+-------+-------+
+; START       ; TIME_UP     ; 4.075 ;       ;       ; 4.710 ;
+; TIME_MIN[0] ; TIME_UP     ;       ; 5.277 ; 5.694 ;       ;
+; TIME_MIN[1] ; TIME_UP     ;       ; 5.050 ; 5.445 ;       ;
+; TIME_MIN[2] ; TIME_UP     ;       ; 5.417 ; 5.842 ;       ;
+; TIME_SEC[0] ; TIME_UP     ;       ; 5.461 ; 5.916 ;       ;
+; TIME_SEC[1] ; TIME_UP     ;       ; 5.568 ; 6.006 ;       ;
+; TIME_SEC[2] ; TIME_UP     ;       ; 5.318 ; 5.726 ;       ;
+; TIME_SEC[3] ; TIME_UP     ;       ; 5.465 ; 5.916 ;       ;
+; TIME_SEC[4] ; TIME_UP     ;       ; 5.279 ; 5.678 ;       ;
+; TIME_SEC[5] ; TIME_UP     ;       ; 4.787 ; 5.225 ;       ;
++-------------+-------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; MINUTE[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; MINUTE[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; MINUTE[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[4]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SECOND[5]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TIME_UP       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; START                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_MIN[0]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_MIN[1]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_MIN[2]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[0]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[1]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[2]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[3]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[4]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; TIME_SEC[5]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SYSCLK                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RST_B                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MINUTE[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.33 V              ; -0.00425 V          ; 0.168 V                              ; 0.058 V                              ; 3.12e-09 s                  ; 2.87e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.33 V             ; -0.00425 V         ; 0.168 V                             ; 0.058 V                             ; 3.12e-09 s                 ; 2.87e-09 s                 ; Yes                       ; Yes                       ;
+; MINUTE[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; MINUTE[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; TIME_UP       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.8e-09 V                    ; 2.37 V              ; -0.00373 V          ; 0.104 V                              ; 0.011 V                              ; 4.34e-10 s                  ; 3.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.8e-09 V                   ; 2.37 V             ; -0.00373 V         ; 0.104 V                             ; 0.011 V                             ; 4.34e-10 s                 ; 3.82e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.37 V              ; -0.0346 V           ; 0.198 V                              ; 0.094 V                              ; 3.14e-10 s                  ; 2.92e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.37 V             ; -0.0346 V          ; 0.198 V                             ; 0.094 V                             ; 3.14e-10 s                 ; 2.92e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.57e-09 V                   ; 2.37 V              ; -0.00683 V          ; 0.171 V                              ; 0.018 V                              ; 4.97e-10 s                  ; 6.66e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.57e-09 V                  ; 2.37 V             ; -0.00683 V         ; 0.171 V                             ; 0.018 V                             ; 4.97e-10 s                 ; 6.66e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MINUTE[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.33 V              ; -0.00229 V          ; 0.111 V                              ; 0.057 V                              ; 3.78e-09 s                  ; 3.5e-09 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.33 V             ; -0.00229 V         ; 0.111 V                             ; 0.057 V                             ; 3.78e-09 s                 ; 3.5e-09 s                  ; Yes                       ; Yes                       ;
+; MINUTE[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; MINUTE[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; TIME_UP       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.85e-07 V                   ; 2.35 V              ; -0.0123 V           ; 0.144 V                              ; 0.042 V                              ; 4.81e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.85e-07 V                  ; 2.35 V             ; -0.0123 V          ; 0.144 V                             ; 0.042 V                             ; 4.81e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.55e-07 V                   ; 2.35 V              ; -0.00221 V          ; 0.097 V                              ; 0.005 V                              ; 4.49e-10 s                  ; 3.85e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.55e-07 V                  ; 2.35 V             ; -0.00221 V         ; 0.097 V                             ; 0.005 V                             ; 4.49e-10 s                 ; 3.85e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.54e-07 V                   ; 2.34 V              ; -0.00774 V          ; 0.109 V                              ; 0.026 V                              ; 6.58e-10 s                  ; 8.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.54e-07 V                  ; 2.34 V             ; -0.00774 V         ; 0.109 V                             ; 0.026 V                             ; 6.58e-10 s                 ; 8.24e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MINUTE[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; MINUTE[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; MINUTE[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SECOND[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; TIME_UP       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SYSCLK     ; SYSCLK   ; 138      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SYSCLK     ; SYSCLK   ; 138      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 141   ; 141  ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 21    ; 21   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Jun 16 21:57:11 2020
+Info: Command: quartus_sta TIMER -c TIMER
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'TIMER.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SYSCLK SYSCLK
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.820
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.820             -18.674 SYSCLK 
+Info (332146): Worst-case hold slack is 0.433
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.433               0.000 SYSCLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -20.844 SYSCLK 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.612
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.612             -16.554 SYSCLK 
+Info (332146): Worst-case hold slack is 0.383
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.383               0.000 SYSCLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -20.844 SYSCLK 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.251
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.251              -1.714 SYSCLK 
+Info (332146): Worst-case hold slack is 0.179
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.179               0.000 SYSCLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -15.814 SYSCLK 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4620 megabytes
+    Info: Processing ended: Tue Jun 16 21:57:13 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

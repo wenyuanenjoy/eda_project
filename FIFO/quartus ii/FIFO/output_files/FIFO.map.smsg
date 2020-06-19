@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at FIFO.v(19): object "EMPTY" differs only in case from object "empty" in the same scope
+Info (10281): Verilog HDL Declaration information at FIFO.v(20): object "FULL" differs only in case from object "full" in the same scope

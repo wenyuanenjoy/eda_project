@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Zircon_Verilog\FIFO\simulation\qsim
+vFIFO
+Z1 !s100 da6idL@YSnZnKggVhiYI;3
+Z2 Ie`45^=0h?=bJlKR;LV5L;3
+Z3 VINeWjhIoF_>LfS^zc6W=C1
+Z4 dD:\Zircon_Verilog\FIFO\simulation\qsim
+Z5 w1592469058
+Z6 8FIFO.vo
+Z7 FFIFO.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|FIFO.vo|
+Z10 o-work work -O0
+Z11 n@f@i@f@o
+!i10b 1
+!s85 0
+Z12 !s108 1592469059.586000
+Z13 !s107 FIFO.vo|
+!s101 -O0
+vFIFO_vlg_check_tst
+!i10b 1
+Z14 !s100 DA=@F?hPRjXo0IJR03CP50
+Z15 I53_>k1`zMKKl62M5GS0OI2
+Z16 VR9_g5>A[oM>2iJi07T]KC0
+R4
+Z17 w1592469057
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z20 !s108 1592469059.862000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@f@i@f@o_vlg_check_tst
+vFIFO_vlg_sample_tst
+!i10b 1
+Z24 !s100 ;?dzl8;TkPFn9=DR@8b[<3
+Z25 IIoGAla5>]Gc=76TBjd1FC0
+Z26 VJ@J?Ffig:om[06T7XoX[>3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@f@i@f@o_vlg_sample_tst
+vFIFO_vlg_vec_tst
+!i10b 1
+Z28 !s100 Ej@X;XjTJJczhljMEk<KA1
+Z29 IS98=M57^^K8ZN?Q^DMKCW2
+Z30 Vi=HO476]0^iTk[;dkOAgL1
+R4
+R17
+R18
+R19
+Z31 L0 339
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@f@i@f@o_vlg_vec_tst
